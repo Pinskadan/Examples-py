@@ -1,0 +1,21 @@
+#!/usr/bin/env python2c
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Apr 12 16:48:15 2017
+
+@author: oliver
+"""
+
+import webbrowser
+from bs4 import BeautifulSoup
+import csv
+import requests
+
+r = requests.get('http://www.nhl.com/scores/htmlreports/20162017/GS021230.HTM')
+data_placeholder = r.text
+soup = BeautifulSoup(data_placeholder)
+
+print data_placeholder
+
+with open("open.csv", "w") as fp:
+    fp.write(data_placeholder)
